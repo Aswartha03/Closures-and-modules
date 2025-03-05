@@ -15,7 +15,7 @@ const library = {
                         
                
     
-                },
+                },//function 1
     
     findBookByTitle(title) {
     
@@ -27,7 +27,7 @@ const library = {
         console.log("Yes the book is found:",ans)
     }
     
-    },
+    },//
     
     removeBook(title) {
     
