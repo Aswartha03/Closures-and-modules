@@ -127,3 +127,58 @@ cities.sort((a, b) => a.localeCompare(b, "de", { sensitivity: "base" }));
 
 
 console.log(cities);
+const obj = {
+  name: "Alice",
+  arrowGreet: () => {
+    console.log(this.name);
+  },
+};
+
+obj.arrowGreet();
+// What is the most likely output 
+const spaceship = {
+  name: "Voyager",
+  showName: () => {
+    console.log("Spaceship: " + this.name);
+  },
+};
+
+spaceship.showName();
+
+// "Spaceship: Voyager"
+const rocket = {
+  name: "Falcon 9",
+};
+rocket.launch = () => {
+  console.log("Rocket: " + this.name);
+};
+
+rocket.launch();
+
+// "Rocket: Falcon 9"
+function defineArrow() {
+  const arrowHello = () => {
+    console.log("Hello from: " + this.location);
+  };
+  arrowHello();
+}
+
+// window.location = "Earth";
+defineArrow();
+
+// "Hello from: Earth
+const starSystem = {
+  name: "Alpha Centauri",
+  regularMethod: function () {
+    console.log(this.name + " is a star system");
+
+    const arrowMethod = () => {
+      console.log("This is " + this.name);
+    };
+    arrowMethod();
+  },
+};
+
+starSystem.regularMethod();
+
+// "Alpha Centauri is a star system
